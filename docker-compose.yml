@@ -1,24 +1,54 @@
 version: '2'
 
-
 services:
-    web:
-        build:
-            context: .
-            dockerfile: Dockerfile
-        container_name: web
-        ports:
-            - "8087:6000"
-    db:
-        image: mongo:3.6.1
-        container_name: db
-        volumes:
-            - mongodb:/data/db
-            - mongodb_config:/data/configdb
-        ports:
-            - 27017:27017
-        command: mongod
-        
+  lbroundrobin:
+    build:
+      context: ./LoadBalancer
+      dockerfile: Dockerfile
+    depends_on:
+      - web2
+    container_name: lbroundrobin
+
+    ports:
+    - "42000:6001"
+  web1:
+      build:
+          context: ./LogService
+          dockerfile: Dockerfile
+      depends_on:
+          - db
+      links:
+          - db
+      ports:
+          - "34001:6000"
+  web2:
+      build:
+          context: ./LogService
+          dockerfile: Dockerfile
+      depends_on:
+          - db
+      links:
+          - db
+      ports:
+          - "34002:6000"
+  web3:
+      build:
+          context: ./LogService
+          dockerfile: Dockerfile
+      depends_on:
+          - db
+      links:
+          - db
+      ports:
+          - "34003:6000"
+  db:
+    image: mongo:3.6.1
+    volumes:
+      - mongodb:/data/db
+      - mongodb_config:/data/configdb
+    ports:
+      - 27017:27017
+    command: mongod
 volumes:
     mongodb:
     mongodb_config:
