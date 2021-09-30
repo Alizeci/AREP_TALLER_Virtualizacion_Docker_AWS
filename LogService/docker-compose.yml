@@ -19,7 +19,7 @@ services:
         links:
             - db
         ports:
-            - "8087:6000"
+            - "8087:6001"
         
 volumes:
     mongodb:

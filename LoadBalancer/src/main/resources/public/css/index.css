@@ -1,0 +1,13 @@
+.table-hover tbody tr:hover td,
+.table-hover tbody tr:hover th {
+  background-color: aliceblue;
+}
+
+.title{
+    margin-top: 1%;
+}
+
+.btn{
+    width: 15%;
+    line-height: 100%;
+}

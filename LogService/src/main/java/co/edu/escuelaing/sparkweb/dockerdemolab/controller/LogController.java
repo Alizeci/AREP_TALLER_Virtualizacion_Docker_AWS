@@ -8,10 +8,10 @@ import co.edu.escuelaing.sparkweb.dockerdemolab.service.LogService;
 public class LogController {
 	
 	public LogController(final LogService logService){
-		get("hello", (req,res) -> "Hello Docker, Again!");
-		post("createlog", (req,res) -> logService.createString(req, res));
+		get("hello", (req,res) -> "Hello Docker from logService, Again!");
+		post("create", (req,res) -> logService.createString(req, res));
 		get("log", (req,res) -> logService.getAllStrings());
-		get("recentlog", (req,res) -> logService.getRecentLog());		
+		get("recent", (req,res) -> logService.getRecentLog());		
 	}
 
 }

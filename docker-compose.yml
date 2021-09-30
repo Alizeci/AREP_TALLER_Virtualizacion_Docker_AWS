@@ -10,7 +10,7 @@ services:
     container_name: lbroundrobin
 
     ports:
-    - "42000:6001"
+    - "42000:6000"
   web1:
       build:
           context: ./LogService
@@ -20,7 +20,7 @@ services:
       links:
           - db
       ports:
-          - "34001:6000"
+          - "34000:6001"
   web2:
       build:
           context: ./LogService
@@ -30,7 +30,7 @@ services:
       links:
           - db
       ports:
-          - "34002:6000"
+          - "34001:6001"
   web3:
       build:
           context: ./LogService
@@ -40,7 +40,7 @@ services:
       links:
           - db
       ports:
-          - "34003:6000"
+          - "34002:6001"
   db:
     image: mongo:3.6.1
     volumes:

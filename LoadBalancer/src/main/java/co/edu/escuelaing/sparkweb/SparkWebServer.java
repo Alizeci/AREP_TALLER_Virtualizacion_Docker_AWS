@@ -2,11 +2,16 @@ package co.edu.escuelaing.sparkweb;
 
 import static spark.Spark.*;
 
+import co.edu.escuelaing.sparkweb.controller.LoadBalancerController;
+import co.edu.escuelaing.sparkweb.controller.service.Client;
+
 public class SparkWebServer {
     
     public static void main(String... args){
     	port(getPort());
-        System.out.println( "Hello World!" );
+    	staticFiles.location("/public"); // load static files
+		
+		new LoadBalancerController(new Client());
     }
 
     private static int getPort() {

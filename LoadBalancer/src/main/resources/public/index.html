@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Taller Docker & AWS</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- CSS only -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+	<link href="css/index.css" rel="stylesheet">
+	<!-- JavaScript Bundle with Popper -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+		crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="js/apiclient.js"></script>
+</head>
+
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<h1 class="title">Strings Log
+				<img src="img/string-logo.png" alt="" style="width:3%" class="img-responsive">
+			</h1>
+			<form>
+				<p>
+					Please specify a string: <input name="String" class="rounded" type="text" id="stringInput" />
+					<button type="button" id="addString" class="btn btn-block btn-outline-primary" onclick=Module.getLog(stringInput.value)>ADD</button>
+				</p>
+			</form>
+		</div>
+		<div class="row">
+			<div style="width: 100%; max-width: auto;">
+				<div>
+					<br />
+					<h2 id="stockInfo">Historical Strings data</h2>
+				</div>
+				<table class="table table-striped table-bordered table-hover" id="table"
+					style="width: 100%; text-align: center;">
+					<thead class="thead-dark">
+						<tr>
+							<th scope="col">DATE</th>
+							<th scope="col">STRING</th>
+						</tr>
+					</thead>
+					<tbody id="infoStringId"></tbody>
+					</tbody>
+				</table>
+			</div>
+			<br />
+		</div>
+	</div>
+</body>
+
+</html>
