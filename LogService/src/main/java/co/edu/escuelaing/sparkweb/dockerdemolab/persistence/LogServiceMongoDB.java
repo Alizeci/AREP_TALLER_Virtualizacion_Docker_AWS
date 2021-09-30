@@ -18,7 +18,7 @@ import org.json.JSONObject;
 
 public class LogServiceMongoDB {
 
-	MongoClient l_mc = new MongoClient("db", 27017); // connect to mongodb
+	MongoClient l_mc = new MongoClient("db", 27017); // connect to mongodb with "db" docker-compose.yml
 	Datastore datastore = new Morphia().createDatastore(l_mc, "test"); // select test collection
 
 	/**
