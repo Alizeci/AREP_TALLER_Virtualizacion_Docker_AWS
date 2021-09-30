@@ -108,7 +108,7 @@ El proyecto está compuesto por:
     ```sh
     docker-compose up -d    --Generar automáticamente la configuración docker
     ```
-    > Ahora podremos acceder a los servicios a través de aws en el navegador con el **DNS público** de nuestra máquina virtual y el puerto **42000**. Por ejemplo, http://ec2-35-175-205-168.compute-1.amazonaws.com:42000
+    > Ahora podremos acceder a los servicios a través de aws en el navegador con el **DNS público** de nuestra máquina virtual y el puerto **42000**. Por ejemplo, http://ec2-52-91-24-157.compute-1.amazonaws.com:42000
 
 
 ## Resultado del despliegue ![resultado](https://img.icons8.com/ios-filled/25/000000/test-results.png)
