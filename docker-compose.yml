@@ -2,52 +2,30 @@ version: '2'
 
 services:
   lbroundrobin:
-    build:
-      context: ./LoadBalancer
-      dockerfile: Dockerfile
-    depends_on:
-      - web2
+    image: alizeci/dockerdemolab_lbroundrobin
     container_name: lbroundrobin
-
     ports:
     - "42000:6000"
   web1:
-      build:
-          context: ./LogService
-          dockerfile: Dockerfile
-      depends_on:
-          - db
-      links:
-          - db
-      ports:
-          - "34000:6001"
+    image: alizeci/dockerdemolab_web1
+    container_name: logserviceweb1
+    ports:
+    - "34000:6001"
   web2:
-      build:
-          context: ./LogService
-          dockerfile: Dockerfile
-      depends_on:
-          - db
-      links:
-          - db
-      ports:
-          - "34001:6001"
+    image: alizeci/dockerdemolab_web2
+    container_name: logserviceweb2
+    ports:
+    - "34001:6001"
   web3:
-      build:
-          context: ./LogService
-          dockerfile: Dockerfile
-      depends_on:
-          - db
-      links:
-          - db
-      ports:
-          - "34002:6001"
+    image: alizeci/dockerdemolab_web3
+    container_name: logserviceweb3
+    ports:
+    - "34002:6001"
   db:
     image: mongo:3.6.1
-    volumes:
-      - mongodb:/data/db
-      - mongodb_config:/data/configdb
+    container_name: db
     ports:
-      - 27017:27017
+        - 27017:27017
     command: mongod
 volumes:
     mongodb:

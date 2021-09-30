@@ -1,6 +1,7 @@
 var Module = (function () {
 
-    var url = "http://localhost:42000"
+    //var url = "http://localhost:42000"
+    var url = "http://ec2-52-91-24-157.compute-1.amazonaws.com:42000"
     function getLog(string){
         axios.post(url+"/addlog?string="+string)
         .then(response=> Module.showInfo(response.data))

@@ -18,7 +18,7 @@ import org.json.JSONObject;
 
 public class LogServiceMongoDB {
 
-	MongoClient l_mc = new MongoClient("localhost", 27017); // connect to mongodb
+	MongoClient l_mc = new MongoClient("db", 27017); // connect to mongodb
 	Datastore datastore = new Morphia().createDatastore(l_mc, "test"); // select test collection
 
 	/**

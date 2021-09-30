@@ -11,7 +11,7 @@ import spark.Request;
 
 public class Client {
 
-	private static final String LOGSERVICE_URL = "http://localhost";
+	private static final String LOGSERVICE_URL = "http://ec2-52-91-24-157.compute-1.amazonaws.com";
 	private final String[] ports = { "34000", "34001", "34002" };
 	private int server = 0;
 
