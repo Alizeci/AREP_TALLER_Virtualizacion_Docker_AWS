@@ -33,8 +33,8 @@ El proyecto está compuesto por:
     <head></head>
     <body>
       <p float="left">
-        <img src="https://github.com/Alizeci/AREP_TALLER_Virtualizacion_Docker_AWS/blob/main/img/arquitecturaDetallada.png" alt="AG" width="450"/>
-        <img src="https://github.com/Alizeci/AREP_TALLER_Virtualizacion_Docker_AWS/blob/main/img/diseñoClases.png" alt="DC" width="500"/>
+        <img src="https://github.com/Alizeci/AREP_TALLER_Virtualizacion_Docker_AWS/blob/main/img/arquitecturaDetallada.png" alt="AG" width="350"/>
+        <img src="https://github.com/Alizeci/AREP_TALLER_Virtualizacion_Docker_AWS/blob/main/img/diseñoClases.png" alt="DC" width="400"/>
       </p>
     </body>
 </html>
