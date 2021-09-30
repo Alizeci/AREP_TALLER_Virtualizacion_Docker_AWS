@@ -66,8 +66,8 @@ El proyecto está compuesto por:
     <head></head>
     <body>
       <p float="left">
-        <img src="https://github.com/Alizeci/AREP_TALLER_Virtualizacion_Docker_AWS/blob/main/img/resultado.png" alt="R0" width="480"/>
-        <img src="https://github.com/Alizeci/AREP_TALLER_Virtualizacion_Docker_AWS/blob/main/img/resultado1.png" alt="R1" width="480"/>
+        <img src="https://github.com/Alizeci/AREP_TALLER_Virtualizacion_Docker_AWS/blob/main/img/resultado.png" alt="R0" width="400"/>
+        <img src="https://github.com/Alizeci/AREP_TALLER_Virtualizacion_Docker_AWS/blob/main/img/resultado1.png" alt="R1" width="400"/>
       </p>
     </body>
 </html>
