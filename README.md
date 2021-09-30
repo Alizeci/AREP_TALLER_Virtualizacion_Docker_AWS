@@ -81,6 +81,7 @@ El proyecto está compuesto por:
     //Se repite por cada imagen en el archivo docker-compose.yml, línea 2 y 3
     ```
     > Véase [docker-compose.yml](https://github.com/Alizeci/AREP_TALLER_Virtualizacion_Docker_AWS/blob/main/docker-compose.yml)
+
 ### ![AWS](https://img.icons8.com/color/38/000000/amazon-web-services.png) Parte II
 
 1. **Para el despliegue en aws, debemos tener instala una máquina virtual EC2. Ejecutamos el siguiente bloque de código para instalar docker y actualizarla.**
@@ -106,6 +107,7 @@ El proyecto está compuesto por:
     
 4. **Finalmente, ejecutamos el siguiente comando, para tener las imágenes en la máquina virtual. Debemos previamente haber abierto los puertos de entrada del security group de la máxima virtual para acceder al servicio. En este caso, el puerto 42000, en la plataforma de AWS.**
     ```sh
+    sudo cp docker-compose.yml /  --Crear la copia que ejecutaremos en la raiz de la máquina virtual
     docker-compose up -d    --Generar automáticamente la configuración docker
     ```
     > Ahora podremos acceder a los servicios a través de aws en el navegador con el **DNS público** de nuestra máquina virtual y el puerto **42000**. Por ejemplo, http://ec2-52-91-24-157.compute-1.amazonaws.com:42000
