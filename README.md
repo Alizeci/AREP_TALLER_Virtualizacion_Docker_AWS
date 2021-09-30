@@ -54,6 +54,24 @@ El proyecto está compuesto por:
 
 + El **servicio MongoDB,** corre por el puerto **27017**
 
+## Generación de imágenes para el despliegue ![despliegue](https://img.icons8.com/plasticine/45/000000/services.png)
+
+## Resultado del despliegue ![resultado](https://img.icons8.com/ios-filled/25/000000/test-results.png)
+
+**En funcionamiento**
+> En la **imágen de la izquierda** se puede observar las 10 cadenas más recientes; teniendo a fresa como la última agregada al log. Mientras que en la **imágen de la derecha** se puede observar la operación agregando una nueva cadena: **melón**; así como su actualización, dejando como primera a **pera** y la última **melón**.
+
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+      <p float="left">
+        <img src="https://github.com/Alizeci/AREP_TALLER_Virtualizacion_Docker_AWS/blob/main/img/resultado.png" alt="R0" width="480"/>
+        <img src="https://github.com/Alizeci/AREP_TALLER_Virtualizacion_Docker_AWS/blob/main/img/resultado1.png" alt="R1" width="480"/>
+      </p>
+    </body>
+</html>
+
 ## Herramientas utilizadas
 
 | Nombre | Uso |
