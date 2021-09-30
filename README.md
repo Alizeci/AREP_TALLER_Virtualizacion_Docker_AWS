@@ -16,9 +16,9 @@ El proyecto está compuesto por:
 
 + El **servicio MongoDB,** que es una instancia de MongoDB corriendo en un *container de docker* en una *máquina virtual* de **EC2**. El servicio corre por el puerto **27017**
 
-### Diseño de la arquitectura de la aplicación
+### Diseño de la arquitectura de la aplicación 📝
 
-**General**
+**Diseño General**
 <!DOCTYPE html>
 <html>
     <head></head>
@@ -27,7 +27,7 @@ El proyecto está compuesto por:
     </body>
 </html>
 
-**Detallada**
+**Diseño Detallado**
 <!DOCTYPE html>
 <html>
     <head></head>
@@ -39,15 +39,15 @@ El proyecto está compuesto por:
     </body>
 </html>
 
-+ La **aplicación web LoadBalancer** corre por el puerto **42000**. 
++ La aplicación web **LoadBalancer** corre por el puerto **42000**. 
   
-  **Tiene 2 endpoints:** 
+  📍**Tiene 2 endpoints:** 
   + **POST** */addlog*, permite agregar una nueva cadena a *MongoDB*, retorna un mensaje de operación exitosa.
   + **GET** */recentlog*, permite obtener las ultimos 10 cadenas almacenadas en *MongoDB*, con el valor de la cadena y la fecha de creación.
 
 + Cada instancia del servicio **LogService** corre respectivamente por los puertos **34001**, **34002**, **34003**. 
 
-  **Tiene 3 endpoints:**
+  📍**Tiene 3 endpoints:**
   + **POST** */create*, permite agregar una nueva cadena a *MongoDB*, retorna un mensaje de operación exitosa.
   + **GET** */log*, permite obtener todas las cadenas almacenadas en la base de datos, retorna una lista de cadenas con el valor de la cadena y la fecha de creación.
   + **GET** */recent*, permite obtener las ultimas 10 cadenas almacenadas en *MongoDB*, retrona una lista de cadenas con el valor de la cadena y la fecha de creación.
