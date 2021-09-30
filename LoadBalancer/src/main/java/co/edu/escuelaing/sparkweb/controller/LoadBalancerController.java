@@ -3,7 +3,7 @@ package co.edu.escuelaing.sparkweb.controller;
 import static spark.Spark.get;
 import static spark.Spark.post;
 
-import co.edu.escuelaing.sparkweb.controller.service.Client;
+import co.edu.escuelaing.sparkweb.service.Client;
 
 public class LoadBalancerController {
 

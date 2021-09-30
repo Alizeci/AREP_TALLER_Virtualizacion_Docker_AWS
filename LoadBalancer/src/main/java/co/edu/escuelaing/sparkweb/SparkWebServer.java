@@ -3,7 +3,7 @@ package co.edu.escuelaing.sparkweb;
 import static spark.Spark.*;
 
 import co.edu.escuelaing.sparkweb.controller.LoadBalancerController;
-import co.edu.escuelaing.sparkweb.controller.service.Client;
+import co.edu.escuelaing.sparkweb.service.Client;
 
 public class SparkWebServer {
     

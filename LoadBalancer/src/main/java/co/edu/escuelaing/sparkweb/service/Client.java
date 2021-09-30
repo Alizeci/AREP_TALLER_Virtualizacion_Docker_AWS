@@ -1,4 +1,4 @@
-package co.edu.escuelaing.sparkweb.controller.service;
+package co.edu.escuelaing.sparkweb.service;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -61,7 +61,7 @@ public class Client {
 			getServerNumber();
 			StringBuffer response = new StringBuffer();
 			URL lu_request = new URL(LOGSERVICE_URL + ":" + ports[server] + "/recent");
-			System.out.println(lu_request.getContent());
+			
 			HttpURLConnection con = (HttpURLConnection) lu_request.openConnection();
 			con.setRequestMethod("GET");
 			int responseCode = con.getResponseCode();
