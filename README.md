@@ -56,6 +56,61 @@ El proyecto está compuesto por:
 
 ## Generación de imágenes para el despliegue ![despliegue](https://img.icons8.com/plasticine/45/000000/services.png)
 
+**Prerequisitos**
++ Maven, Java
++ Docker instalado en la máquina
++ Repositorio clonado
+
+### ![Docker](https://img.icons8.com/color/38/000000/docker.png) Parte I
+
+1. **Para crear las imágenes, ejecute el siguiente comando. Debe estar ubicado en la raiz del proyecto (donde se encuentra el archivo docker-compose.yml), en este caso en** *dockerdemolab*
+    ```sh
+    docker-compose up -d
+    ```
+    > Usamos docker-compose para generar automáticamente una configuración docker, por ejemplo un container y una instancia a de mongo en otro container.
+2. **Verifique que se crearon los servicios, usando el siguiente comando.**
+    ```sh
+    docker ps
+    ```
+    > Puede ingresar a la aplicación de Docker Desktop y revisar que los contenedores, imágenes y/o volúmenes creados, están corriendo.
+3. **Ahora se sube las imágenes del punto 2 a Docker Hub, usando el siguiente bloque de comandos, por cada imagen. Previamente, debe haber creado una cuenta y un repositorio por c/a imagen.**
+    ```sh
+    1   docker login    --Realizamos la autenticación
+    2   docker tag dockerlbroundrobin alizeci/dockerdemolab_lbroundrobin    --Ejemplo de imagen del balanceador de carga con mi cuenta de Docker Hub
+    3   docker push alizeci/dockerdemolab_lbroundrobin:latest       --Empujar imagen al repositorio en Docker Hub
+    //Se repite por cada imagen en el archivo docker-compose.yml, línea 2 y 3
+    ```
+    > Véase [docker-compose.yml](https://github.com/Alizeci/AREP_TALLER_Virtualizacion_Docker_AWS/blob/main/docker-compose.yml)
+### ![AWS](https://img.icons8.com/color/38/000000/amazon-web-services.png) Parte II
+
+1. **Para el despliegue en aws, debemos tener instala una máquina virtual EC2. Ejecutamos el siguiente bloque de código para instalar docker y actualizarla.**
+    ```sh
+    sudo yum update -y
+    sudo yum install docker
+    ```
+
+2. **Posteriormente, iniciamos el servicio de docker y configuramos nuestro usuario en el grupo de docker, usando los siguientes comandos.**
+    ```sh
+    sudo service docker start
+    sudo usermod -a -G docker ec2-user
+    ```
+    > Nos desconectamos de la máquina virtual e ingresamos nuevamente para que la configuración de grupos de usuarios tenga efecto, usando `exit`.
+
+3. **Ahora clonamos el presente repositorio en Github en nuestra máquina virtual en AWS y ejecutamos `docker-compose up -d` para instalar a partir de las imágenes creadas en Dockerhub las instancias de los contenedores docker.**
+    ```sh
+    sudo curl -L "https://github.com/docker/compose/releases/download/1.26.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose   --Descarga la versión y guarda el ejecutable, que lo hará accesible globalmente por docker-compose
+    sudo chmod +x /usr/local/bin/docker-compose     --Establecemos los permisos del ejecutable
+    docker-compose --version        --Verficamos la correcta instalación
+
+    ```
+    
+4. **Finalmente, ejecutamos el siguiente comando, para tener las imágenes en la máquina virtual. Debemos previamente haber abierto los puertos de entrada del security group de la máxima virtual para acceder al servicio. En este caso, el puerto 42000, en la plataforma de AWS.**
+    ```sh
+    docker-compose up -d    --Generar automáticamente la configuración docker
+    ```
+    > Ahora podremos acceder a los servicios a través de aws en el navegador con el **DNS público** de nuestra máquina virtual y el puerto **42000**. Por ejemplo, http://ec2-35-175-205-168.compute-1.amazonaws.com:42000
+
+
 ## Resultado del despliegue ![resultado](https://img.icons8.com/ios-filled/25/000000/test-results.png)
 
 **En funcionamiento**
